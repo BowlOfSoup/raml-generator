@@ -1,0 +1,37 @@
+{
+  "name": "bowlofsoup/raml-generator",
+  "type": "library",
+  "description": "Library for generating .raml files.",
+  "keywords": ["raml", "generator", "documentation", "api"],
+  "homepage": "https://github.com/BowlOfSoup/raml-generator",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "BowlOfSoup",
+      "email": "bowlofsoup@boomvos.nl"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/BowlOfSoup/yaml"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.9",
+    "symfony/yaml": "dev-2.8-multiline as 2.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Bos\\RamlGenerator\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Bos\\RamlGenerator\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^3.7"
+  }
+}

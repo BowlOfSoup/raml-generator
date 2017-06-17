@@ -1,0 +1,43 @@
+title: 'Test API'
+baseUri: api/v2
+version: 1
+mediaType: application/json
+/quotes:
+    description: 'Collection of quotes.'
+    get:
+        description: 'Get a list of quotes based on filter parameters.'
+        headers:
+            X-Access-Token:
+                example: 'user:password'
+        queryParameters:
+            random:
+                example: '?random=1'
+        responses:
+            200:
+                application/json: |
+                    {
+                    	"context": "Woensdag bugfixdag",
+                    	"datetime": "2007-04-17 17:31:36",
+                    	"kudos": {
+                    		"person": "Jan Jansen"
+                    	},
+                    	"person": "Jan Jansen",
+                    	"quote": "Ja sorry, ik ben standaard elke woensdag ziek",
+                    	"user": "1"
+                    }
+    post:
+        description: 'Create a quote.'
+        body: |
+            {
+            	"context": "Woensdag bugfixdag",
+            	"datetime": "2007-04-17 17:31:36",
+            	"kudos": {
+            		"person": "Jan Jansen"
+            	},
+            	"person": "Jan Jansen",
+            	"quote": "Ja sorry, ik ben standaard elke woensdag ziek",
+            	"user": "1"
+            }
+    /(quoteId):
+        delete:
+            description: 'Delete a quote.'
