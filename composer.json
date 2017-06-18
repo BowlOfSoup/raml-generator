@@ -28,7 +28,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Bos\\RamlGenerator\\Tests\\": "tests/"
+      "Bos\\RamlGenerator\\Test\\": "test/"
     }
   },
   "require-dev": {

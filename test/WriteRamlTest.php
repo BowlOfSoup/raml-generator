@@ -1,6 +1,6 @@
 <?php
 
-namespace Bos\RamlGenerator\Tests;
+namespace Bos\RamlGenerator\Test;
 
 use Bos\RamlGenerator\Model\Api;
 use Bos\RamlGenerator\Model\ApiHeader;
@@ -27,7 +27,7 @@ class WriteRamlTest extends \PHPUnit_Framework_TestCase
 
         $apiMethodGet = new ApiMethod();
         $apiMethodGet->setDescription('Get a list of quotes based on filter parameters.');
-        $apiMethodGet->setMethodName('get');
+        $apiMethodGet->setMethodName(ApiMethod::METHOD_GET);
         $headerGet = new ApiHeader();
         $headerGet->setName('X-Access-Token');
         $headerGet->setExample('user:password');
@@ -43,7 +43,7 @@ class WriteRamlTest extends \PHPUnit_Framework_TestCase
         $api->addMethod($apiMethodGet);
 
         $apiMethodPost = new ApiMethod();
-        $apiMethodPost->setMethodName('post');
+        $apiMethodPost->setMethodName(ApiMethod::METHOD_POST);
         $apiMethodPost->setDescription('Create a quote.');
         $apiMethodPost->setBody($this->getJson());
         $api->addMethod($apiMethodPost);
@@ -52,7 +52,7 @@ class WriteRamlTest extends \PHPUnit_Framework_TestCase
         $apiMethodQuoteId->setMethodName('/(quoteId)');
 
         $apiMethodQuoteIdDelete = new ApiMethod();
-        $apiMethodQuoteIdDelete->setMethodName('delete');
+        $apiMethodQuoteIdDelete->setMethodName(ApiMethod::METHOD_DELETE);
         $apiMethodQuoteIdDelete->setDescription('Delete a quote.');
 
         $apiMethodQuoteId->addMethod($apiMethodQuoteIdDelete);

@@ -6,6 +6,11 @@ use Bos\RamlGenerator\Helper\Json;
 
 class ApiMethod extends AbstractApi
 {
+    const METHOD_GET = 'get';
+    const METHOD_POST = 'post';
+    const METHOD_PUT = 'put';
+    const METHOD_DELETE = 'delete';
+
     /** @var string */
     private $methodName;
 
@@ -20,6 +25,9 @@ class ApiMethod extends AbstractApi
 
     /** @var string */
     private $body;
+
+    /** @var array */
+    private $knownMethods = array('get', 'post', 'put', 'delete');
 
     /**
      * @return string
@@ -123,5 +131,15 @@ class ApiMethod extends AbstractApi
         $this->body = $body;
 
         return $this;
+    }
+
+    /**
+     * @param string $method
+     *
+     * @return bool
+     */
+    public function isKnownMethod($method)
+    {
+        return in_array($method, $this->knownMethods);
     }
 }
